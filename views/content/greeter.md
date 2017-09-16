@@ -147,7 +147,35 @@ Then you can instantiate a JavaScript object which can be used to call the contr
 
 This particular example can be instantiated by anyone by simply calling:
 
-    var greeter2 = eth.contract([{constant:false,inputs:[],name:'kill',outputs:[],type:'function'},{constant:true,inputs:[],name:'greet',outputs:[{name:'',type:'string'}],type:'function'},{inputs:[{name:'_greeting',type:'string'}],type:'constructor'}]).at('greeterAddress');
+    var greeter2 = eth.contract([
+        {
+            constant:false,
+            inputs:[],
+            name:'kill',
+            outputs:[],
+            type:'function'
+        },
+        {            
+            constant:true,
+            inputs:[],
+            name:'greet',
+            outputs: [
+                {
+                name:'',
+                type:'string'
+                }
+            ],
+            type:'function'
+        },
+        {
+            inputs:[
+                {
+                    name:'_greeting',
+                    type:'string'
+                }
+            ],
+            type:'constructor'
+        }]).at('greeterAddress');
 
 Replace _greeterAddress_ with your contract's address.
 
